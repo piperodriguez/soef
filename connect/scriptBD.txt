@@ -1,0 +1,159 @@
+/*script base de datos SOEF
+BD NAME : soef
+MYSQL
+*/
+/*TABLAS*/
+CREATE TABLE rol 
+(
+  id_rol int NOT NULL AUTO_INCREMENT,
+  descripcion varchar(100) NOT NULL,
+  primary key(id_rol)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+CREATE TABLE usuarios 
+(
+  id_usuario int NOT NULL AUTO_INCREMENT,
+  id_rol int NOT NULL,
+  username varchar(50) NOT NULL,
+  password varchar(32) NOT NULL,
+  primary key(id_usuario)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+ALTER TABLE usuarios ADD UNIQUE Index_rol (id_rol);
+
+CREATE TABLE personas 
+(
+  id_persona int NOT NULL AUTO_INCREMENT,
+  id_usuario int NOT NULL,
+  id_barrio int NOT NULL,
+  nombre varchar(30) NOT NULL,
+  apellido varchar(30) NOT NULL,
+  celular int (10) NOT NULL,
+  imagen mediumblob NULL,/*MEDIUMBLOB: permite hasta 16777215 caracteres, máximo 16MB*/
+  tipo_imagen varchar(30) NULL,
+  primary key(id_persona),
+  UNIQUE Index_usuario (id_usuario)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+ALTER TABLE personas ADD INDEX(id_barrio);
+
+ALTER TABLE personas ADD id_profesion int NOT NULL AFTER id_barrio;
+
+ALTER TABLE personas DROP id_profesion;
+
+CREATE TABLE ciudad 
+(
+  id_ciudad int NOT NULL AUTO_INCREMENT,
+  nombre varchar(40) NOT NULL,
+  primary key(id_ciudad)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE barrios 
+(
+  id_barrio int NOT NULL AUTO_INCREMENT,
+  id_ciudad int NOT NULL ,
+  nombre varchar(50) NOT NULL,
+  primary key(id_barrio),
+  UNIQUE Index_ciudad (id_ciudad)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE area 
+(
+  id_area int NOT NULL AUTO_INCREMENT,
+  nombre varchar(40) NOT NULL,
+  primary key(id_area)
+
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE profesion 
+(
+  id_profesion int NOT NULL AUTO_INCREMENT,
+  nombre varchar(40) NOT NULL,
+  id_area int NOT NULL,
+  UNIQUE Index_area (id_area),
+  primary key(id_profesion)
+
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE servicios 
+(
+  id_servicio int NOT NULL AUTO_INCREMENT,
+  nombre varchar(40) NOT NULL,
+  id_profesion int NOT NULL,
+  primary key(id_servicio),
+  UNIQUE Index_profesio (id_profesion),
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
+/*RELACIONES*/
+
+ALTER TABLE usuarios
+ADD CONSTRAINT relacion_rol_usuario
+FOREIGN KEY (id_rol)
+REFERENCES rol (id_rol)
+ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE personas
+ADD CONSTRAINT relacion_usuario_persona
+FOREIGN KEY (id_usuario)
+REFERENCES usuarios (id_usuario)
+ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE personas
+ADD CONSTRAINT relacion_persona_barrio
+FOREIGN KEY (id_barrio)
+REFERENCES barrios (id_barrio)
+ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE personas
+ADD CONSTRAINT relacion_persona_profesion
+FOREIGN KEY (id_profesion)
+REFERENCES profesion (id_profesion)
+ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE barrios
+ADD CONSTRAINT relacion_barrio_ciudad
+FOREIGN KEY (id_ciudad)
+REFERENCES ciudad (id_ciudad)
+ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE profesion
+ADD CONSTRAINT relacion_profesion_area
+FOREIGN KEY (id_area)
+REFERENCES area (id_area)
+ON DELETE CASCADE ON UPDATE CASCADE;
+
+
+/*Datos BASE*/
+
+
+
+insert into area (id_area,nombre)values('','Hogar');/*1*/
+
+
+insert into area (id_area,nombre)values('','Eventos');/*2*/
+
+
+insert into area (id_area,nombre)values('','Otros');/*3*/
+
+
+insert into profesion (id_profesion, id_area, nombre)values('','1','Niñera');
+insert into profesion (id_profesion, id_area, nombre)values('','1','Carpintero');
+insert into profesion (id_profesion, id_area, nombre)values('','1','Electricista');
+
+insert into profesion (id_profesion, id_area, nombre)values('','2','Staff'),('','2','Dj'),('','2','Cheffs');
+
+insert into profesion (id_profesion, id_area, nombre)values('','3','Paseador de Perros'),('','3','Acarreos'),('','3','Dpmicilios');
+
+
+
+
+
+
+
+
+
+
+
