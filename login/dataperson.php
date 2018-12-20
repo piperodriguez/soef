@@ -186,7 +186,11 @@ $result = $cn->query($data);
       </div>
     </div>
     <div class="form-group">
+<<<<<<< HEAD
       <label class="control-label col-sm-2" for="celular"># Ceuluar:</label>
+=======
+      <label class="control-label col-sm-2" for="celular"># Celular:</label>
+>>>>>>> 2ab4d0084c5f1bf93b510da1d11081c0f24413b6
       <div class="col-sm-10"> 
         <input type="text" class="form-control" id="celular" name="celular" placeholder="Enter Number phone">
       </div>
@@ -214,8 +218,14 @@ $result = $cn->query($data);
   </form>
 </div>
 <?php
+<<<<<<< HEAD
          // echo "No se ejecuto la consulta";
       }
 ?>
+=======
+        // echo "No se ejecuto la consulta";
+      }
+?> 
+>>>>>>> 2ab4d0084c5f1bf93b510da1d11081c0f24413b6
 </body>
 </html>

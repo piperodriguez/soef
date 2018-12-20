@@ -44,7 +44,11 @@ $img = $id.'.JPG';
   <div class="container">
     <?php
   if ($direccion > 0) {
+<<<<<<< HEAD
   
+=======
+}  
+>>>>>>> 2ab4d0084c5f1bf93b510da1d11081c0f24413b6
   
 ?>  
     <div class="row">

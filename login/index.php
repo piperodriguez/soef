@@ -133,18 +133,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div class="flexslider">
               <ul class="slides">
                 <li>
-                  <img src="../img/1.jpg" alt="">
+                  <img src="../img/image.jpg" alt="">
                   <section class="flex-caption">
                     <p>Soluciones</p>
                   </section>
                   <li>
-                  <img src="../img/20664.jpg" alt="">
+                  <img src="../img/oficina.jpg" alt="">
                   <section class="flex-caption">
                   <p>Eficientes</p>
                   </section>
                 </li>
                 <li>
-                  <img src="../img/3.jpg" alt="">
+                  <img src="../img/object.png" alt="">
                   <section class="flex-caption">
                     <p>¡ a tu alcance !</p>
                   </section>
@@ -172,6 +172,56 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   </section>
   <!---->
   <!---->
+    <section class="section-padding wow fadeInUp delay-02s" id="portfolio">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-12">
+          <div class="section-title">
+            <h2 class="head-title">Algunos de nuestros servicios</h2>
+            <hr class="botm-line">
+            <p class="sec-para">Le presentamos algunos de los servicios que aquí podra encontrar y que usted 
+            puede contrartar con los mejores recursos humanos de la ciudad.</p>
+          </div>
+        </div>
+        <div class="col-md-9 col-sm-12">
+          <div class="col-md-4 col-sm-6 padding-right-zero">
+            <div class="portfolio-box design">
+              <img src="../img/port01.jpg" alt="" class="img-responsive">
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 padding-right-zero">
+            <div class="portfolio-box design">
+              <img src="../img/port02.jpg" alt="" class="img-responsive">
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 padding-right-zero">
+            <div class="portfolio-box design">
+              <img src="../img/port03.jpg" alt="" class="img-responsive">
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 padding-right-zero">
+            <div class="portfolio-box design">
+              <img src="../img/port04.jpg" alt="" class="img-responsive">
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 padding-right-zero">
+            <div class="portfolio-box design">
+              <img src="../img/port05.jpg" alt="" class="img-responsive">
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 padding-right-zero">
+            <div class="portfolio-box design">
+              <img src="../img/port06.jpg" alt="" class="img-responsive">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!---->
+  <!---->
+
   <section id="feature" class="section-padding">
     <div class="container">
       <div class="row">
@@ -258,54 +308,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         </div>
         <div class="col-md-4 text-center">
           <a href="#" class="btn btn-submit">Subscribe Now</a>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!---->
-  <!---->
-  <section class="section-padding wow fadeInUp delay-02s" id="portfolio">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3 col-sm-12">
-          <div class="section-title">
-            <h2 class="head-title">Algunos de nuestros servicios</h2>
-            <hr class="botm-line">
-            <p class="sec-para">Le presentamos algunos de los servicios que aquí podra encontrar y que usted 
-            puede contrartar con los mejores recursos humanos de la ciudad.</p>
-          </div>
-        </div>
-        <div class="col-md-9 col-sm-12">
-          <div class="col-md-4 col-sm-6 padding-right-zero">
-            <div class="portfolio-box design">
-              <img src="../img/port01.jpg" alt="" class="img-responsive">
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 padding-right-zero">
-            <div class="portfolio-box design">
-              <img src="../img/port02.jpg" alt="" class="img-responsive">
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 padding-right-zero">
-            <div class="portfolio-box design">
-              <img src="../img/port03.jpg" alt="" class="img-responsive">
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 padding-right-zero">
-            <div class="portfolio-box design">
-              <img src="../img/port04.jpg" alt="" class="img-responsive">
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 padding-right-zero">
-            <div class="portfolio-box design">
-              <img src="../img/port05.jpg" alt="" class="img-responsive">
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 padding-right-zero">
-            <div class="portfolio-box design">
-              <img src="../img/port06.jpg" alt="" class="img-responsive">
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -426,7 +428,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                   <div class="form-group">
                       <input type="submit" class="btn btn-primary" value="Login">
                   </div>
-                  <p>¿No tienes una cuenta? <a href="register.php">Regístrate ahora</a>.</p>
+                  <p>¿No tienes una cuenta? <a href="registro.php">Regístrate ahora</a>.</p>
               </form>
             </div>
             <div class="modal-footer">
