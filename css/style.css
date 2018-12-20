@@ -7,8 +7,11 @@
 
 body {
   line-height: 1.5;
-  font-family: 'Open Sans', sans-serif;
+  font: 14px ! important; 
+  font-family: 'Open Sans', sans-serif ! important;
+  text-align: center ! important;
   overflow-x: hidden;
+  
 }
 
 ol, ul {
@@ -499,4 +502,75 @@ i.fa.fa-user-circle.fa-5x {
 }
 #zoe{
   color: red;
+}
+
+.page-header1{
+  
+  width: 100%;
+  height: auto;
+  background-color: white ! important;
+  position: absolute;
+}
+
+.page-header1 h3{
+  
+  color: #3196A8;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 20px;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  margin: auto;
+
+  }
+
+  .card{
+
+    width: 30rem ! important;
+    height: 8rem ! important;
+  }
+
+
+.list-group{
+
+  padding-top: 15%;
+}
+
+.h3, h3 {
+    font-size: 1.5rem ! important;
+}
+
+.blockquote-footer {
+    display: block;
+    font-size: 100% ! important;
+    color: #6c757d;
+}
+
+.float-right{
+  height: 8rem;
+  width: 10rem;
+  display: block;
+  vertical-align: middle;
+  margin-left: 60%;
+  padding-right: 1%;
+
+}
+
+.bg-info {
+    background-color: #ffffff ! important;
+}
+
+.button-center{
+
+  margin-bottom: 8%;
+
+}
+
+.card-group{
+
+  margin-bottom: 30%;
 }

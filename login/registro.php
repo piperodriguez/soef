@@ -150,7 +150,7 @@
 					<h1 id="titleRegister">Registrate</h1>
     				<i class="fa fa-user-circle fa-5x"></i>
     			</center>
-		    	<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+		    	<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
 					<!--<div class="form-group">
 						<label class="control-label col-sm-6" for="email">Email:</label>
 						<input type="email" name="email" class="form-control">
@@ -188,7 +188,7 @@
 	        <div class="col-sm-7 footer-copyright">
 	          © Bethany Theme - All rights reserved
 	          <div class="credits">
-	            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+	            Designed by yvcastiblanco frodriguez 
 	          </div>
 	        </div>
 	        <div class="col-sm-5 footer-social">

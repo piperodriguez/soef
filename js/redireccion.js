@@ -3,6 +3,7 @@ function registro(){
 	location.href = ruta;
 }
 
+
 function consulta(url, parametros, respuesta){
 	//console.log(parametros)
 	$.ajax({
@@ -36,6 +37,11 @@ $(document).ready(function(){
 
 	});
 
+	$(document).on('click','.continuar', function(){
+		consulta("curriculum.php", {}, function(result) {
+			$('.contenedor').html(result);
+		});
+	});
 
 
 });
