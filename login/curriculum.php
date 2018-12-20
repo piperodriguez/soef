@@ -14,7 +14,7 @@
   $x = $_SESSION["id"];
   $y = $_SESSION["username"];
 
-  $data ="SELECT users.id, personas.id_persona, personas.nombre, personas.direccion
+  $data ="SELECT users.id, personas.id_persona, personas.nombre, personas.direccion, personas.formacion, personas.experiencia
   FROM personas
   INNER JOIN users ON users.id = personas.id
   WHERE personas.id = $x";
@@ -25,7 +25,12 @@
       $id = $row["id_persona"];
       $nombre = $row["nombre"];
       $direccion = $row["direccion"];
+      $formacion = $row["formacion"];
+      $experiencia = $row["experiencia"];
+
+
   }  
+
 
 $img = $id.'.JPG';
 
@@ -43,12 +48,23 @@ $img = $id.'.JPG';
 
   <div class="container">
     <?php
-  if ($direccion > 0) {
-<<<<<<< HEAD
-  
-=======
-}  
->>>>>>> 2ab4d0084c5f1bf93b510da1d11081c0f24413b6
+  if ($direccion != null || $formacion != null || $experiencia != null) {
+    ?>
+<div class="container contenedor">
+      <h1>Registro  100% de <?php echo htmlspecialchars($_SESSION["username"]); ?></h1>
+      <br>
+        <div class="progress">
+          <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+            100% Complete 
+          </div>
+        </div>
+      <label>registro completado :</label>
+      <a href="#"> <button class="btn btn-default">Home</button></a>
+</div>
+    <?php
+        
+}else{
+
   
 ?>  
     <div class="row">
@@ -84,10 +100,10 @@ $img = $id.'.JPG';
   </div>
 
 <?php
-
-}else{
-  echo "registro completadp";
+ 
 }
+ 
+
 
 
  if($_SERVER["REQUEST_METHOD"] == "POST"){
