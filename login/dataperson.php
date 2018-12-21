@@ -36,24 +36,7 @@
               $apellido = $_POST["apellido"];
               $email = $_POST["email"];
               $celular = $_POST["celular"];
-              $info_img = pathinfo($_FILES['imagen']['name']); // resivimos la imagen$nombre
 
-              /*
-              print_r($id_usuario);
-
-              print_r($apellido);
-
-              print_r($barrio);
-
-              print_r($nombre);
-
-              print_r($email);
-
-              print_r($celular);
-
-              print_r($info_img);
-
-            */
 
               $query = "INSERT INTO personas (id_persona, id, id_barrio, nombre, apellido, celular, email) 
                         VALUES (null, $id_usuario, $barrio,'$nombre','$apellido','$celular','$email')";
@@ -65,11 +48,11 @@
               $idimg = $cn->insert_id;
 
 
-              print_r($idimg);
+               $info_img = pathinfo($_FILES['imagen']['name']); // resivimos la imagen$nombre
+
+  
 
               $img = $idimg.'.'.$info_img['extension'];
-
-              print_r($img);
 
               $tmp_name = $_FILES['imagen']['tmp_name'];
 
@@ -88,7 +71,7 @@
 
 $x = $_SESSION["id"];
 
-$data ="SELECT users.id, personas.id_persona
+$data ="SELECT users.id, personas.id_persona,personas.experiencia, personas.direccion
 FROM personas
 INNER JOIN users ON users.id = personas.id
 WHERE personas.id = $x";
@@ -114,19 +97,7 @@ $result = $cn->query($data);
   	</style>
 </head>
 <body>
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-     <img src="../img/logo.jpeg" class="float-right">
-    </div>
-    <ul class="nav navbar-nav">
-      <li><a href="index.php">Home</a></li>
-      <li><a class="dataPerson" href="#">Datos |</a></li>
-      <li><a class="resetPassword" href="#">Cambiar de Contraseña |</a></li>
-      <li><a class="continuar" href="#">Curriculum |</a></li>
-    </ul>
-  </div>
-</nav>
+
 
 
 <?php
@@ -137,21 +108,69 @@ $result = $cn->query($data);
               /*echo "id ->".$row["id"]."<br>";
               echo "id_persona ->".$row["id_persona"];*/
               $numid = $row["id_persona"];
+
+              $direccion = $row["direccion"];
+
+              $experiencia = $row["experiencia"];
+
+
               
-              if ($numid != null) {
+              if ($numid != null ) {
+
+                if ($direccion != null) {
 ?>
-<div class="container contenedor">
-      <h1>Registro  65% de <?php echo htmlspecialchars($_SESSION["username"]); ?></h1>
-      <br>
-        <div class="progress">
-          <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width:65%">
-            65% Complete 
-          </div>
-        </div>
-      <label>Ya casi puedes publicar tus experiendia :</label>
-      <a class="continuar2" href="#"> <button class="btn btn-default">Curriculum</button></a>
-</div>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+     <img src="../img/logo.jpeg" class="float-right">
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="index.php">Home</a></li>
+      <li><a href="dataperson.php">Datos |</a></li>
+      <li><a href="curriculum.php">Curriculum |</a></li>
+    </ul>
+  </div>
+</nav>
+      <div class="container contenedor">
+            <h1>Registro  100% de <?php echo htmlspecialchars($_SESSION["username"]); ?></h1>
+            <br>
+              <div class="progress">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+                  100% Complete 
+                </div>
+              </div>
+            <label>registro completado :</label>
+      <a href="index.php"> <button class="btn btn-default">Home</button></a>
+      </div>
 <?php
+                
+                }else{
+?>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+     <img src="../img/logo.jpeg" class="float-right">
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="index.php">Home</a></li>
+      <li><a href="dataperson.php">Datos |</a></li>
+      <li><a href="curriculum.php">Curriculum |</a></li>
+    </ul>
+  </div>
+</nav>
+      <div class="container contenedor">
+            <h1>Registro  65% de <?php echo htmlspecialchars($_SESSION["username"]); ?></h1>
+            <br>
+              <div class="progress">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width:65%">
+                  65% Complete 
+                </div>
+              </div>
+            <label>Ya casi puedes publicar tus experiendia :</label>
+            <a href="curriculum.php"> <button class="btn btn-default">Curriculum</button></a>
+      </div>
+<?php             
+                }
                 
               }
               
@@ -159,6 +178,17 @@ $result = $cn->query($data);
 
       } else {
 ?>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+     <img src="../img/logo.jpeg" class="float-right">
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="index.php">Home</a></li>
+      <li><a href="dataperson.php">Datos |</a></li>
+    </ul>
+  </div>
+</nav>
 <h4>Registro  10% de <?php echo htmlspecialchars($_SESSION["username"]); ?></h4>
   <div class="progress">
     <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width:10%">

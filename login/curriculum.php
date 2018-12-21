@@ -43,10 +43,24 @@ $img = $id.'.JPG';
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/login.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 <body>
-
+    <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+     <img src="../img/logo.jpeg" class="float-right">
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="index.php">Home</a></li>
+      <li><a href="dataperson.php">Datos |</a></li>
+      <li><a href="curriculum.php">Curriculum |</a></li>
+    </ul>
+  </div>
+</nav>
   <div class="container">
+
+
     <?php
   if ($direccion != null || $formacion != null || $experiencia != null) {
     ?>
@@ -59,7 +73,7 @@ $img = $id.'.JPG';
           </div>
         </div>
       <label>registro completado :</label>
-      <a href="#"> <button class="btn btn-default">Home</button></a>
+      <a href="index.php"> <button class="btn btn-default">Home</button></a>
 </div>
     <?php
         
@@ -92,8 +106,19 @@ $img = $id.'.JPG';
             <textarea class="form-control" rows="5" name="experiencia"></textarea> 
           </div>
           <div class="form-group">
-            <button type="submit" class="btn btn-success">Completar el registro</button>
+            <label>Disponibilidad de tiempo en Horas</label>
+            <select class="form-control">
+              <option>1 hora</option>
+              <option>2 horas</option>
+              <option>3 horas</option>
+              <option>4 horas</option>
+              <option>5 horas</option>
+              <option>6 horas</option>
+              <option>7 horas</option>
+              <option>8 horas</option>
+            </select>
           </div>
+
           </form> 
       </div>
     </div>
