@@ -23,59 +23,107 @@
 </head>
 
 <body>
+
+   <!---->
     <div class="page-header1">
-     <div class="bg-info clearfix">
+     <nav class="nav nav-pills flex-column flex-sm-row">
       <img src="../img/logo.jpeg" class="float-right">
       <div class="card">
       <div class="card-body">
       <h3>Hola, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>&nbsp;&nbsp;Bienvenido a SOEF&nbsp;<a href="logout.php" class="card-link"><br>Cerrar sesión</h3></a>
       </div>
       </div>
+      </nav>
+    </div>
+
+   <!---->     
+  <div class="centro">
+        <img src="../img/team-banner2.jpg" class="img-fluid" alt="Responsive image">
+  </div>
+   
+  <!---->
+  <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+   <div class="button-center">
+      <br>
+      <br>
+      <a href="Welcome.php"><button type="button" class="btn btn-secondary btn-lg">Home</button></a>
+      <a href="dataperson.php"><button type="button" class="btn btn-secondary btn-lg">Mi Cuenta</button></a>
+      <a href="dataperson.php"><button type="button" class="btn btn-secondary btn-lg">Cambiar Contraseña</button></a>
+      <a href="dataperson.php"><button type="button" class="btn btn-secondary btn-lg">Ofertas Laborales</button></a> 
+      <a href="logout.php"><button type="button" class="btn btn-secondary btn-lg">Cerrar sesión</button></a>    
+  </div>
+  </nav>
+
+  <!---->
+    <section class="section-padding wow fadeInUp delay-02s" id="portfolio">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-12">
+          <div class="section-title">
+            <h2 class="head-title">Busquedas recomendadas para ti</h2>
+            <hr class="botm-line">
+            <p class="sec-para">Algunos de los empleos que te puedan interesar</p>
+          </div>
+        </div>
+        <div class="col-md-9 col-sm-12">
+          <div class="col-md-4 col-sm-6 padding-right-zero">
+            <div class="portfolio-box design">
+              <img src="../img/port01.jpg" alt="" class="img-responsive">
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 padding-right-zero">
+            <div class="portfolio-box design">
+              <img src="../img/port02.jpg" alt="" class="img-responsive">
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 padding-right-zero">
+            <div class="portfolio-box design">
+              <img src="../img/port03.jpg" alt="" class="img-responsive">
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 padding-right-zero">
+            <div class="portfolio-box design">
+              <img src="../img/port04.jpg" alt="" class="img-responsive">
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 padding-right-zero">
+            <div class="portfolio-box design">
+              <img src="../img/port05.jpg" alt="" class="img-responsive">
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 padding-right-zero">
+            <div class="portfolio-box design">
+              <img src="../img/port06.jpg" alt="" class="img-responsive">
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-       
+  </section>
 
-    <div class="centro">
-        <img src="../img/team-banner2.jpg" class="img-fluid" alt="Responsive image">
-    </div>
-   
-    <div class="button-center">
-        <br>
-        <br>
-        <a href="dataperson.php"><button type="button" class="btn btn-secondary btn-lg">Home</button></a>
-        <a href="profile.php"><button type="button" class="btn btn-secondary btn-lg">Mi Cuenta</button></a>
-        <a href="dataperson.php"><button type="button" class="btn btn-secondary btn-lg">Hoja de Vida</button></a>
-        <a href="dataperson.php"><button type="button" class="btn btn-secondary btn-lg">Ofertas Laborales</button></a>
-        <a href="dataperson.php"><button type="button" class="btn btn-secondary btn-lg">Contáctanos</button></a>
-        <a href="logout.php"><button type="button" class="btn btn-secondary btn-lg">Cerrar sesión</button></a>
-   </div>
+  <!----->
 
-<div class="card-group">
-  <div class="card">
-    <img class="card-img-top" src="../img/picture.jpg" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Administracion</h5>
-      <p class="card-text">...</p>
-      <p class="card-text"><small class="text-muted">...</small></p>
+  <section class="section-padding parallax bg-image-2 section wow fadeIn delay-08s" id="cta-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="cta-txt">
+            <h3>Para mas informacion contactanos</h3>
+            <p>
+
+
+
+
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4 text-center">
+          <a href="#" class="btn btn-submit">info@soef.com.co</a>
+          <a href="#" class="btn btn-submit">(57)310-649-3104</a>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="card">
-    <img class="card-img-top" src="../img/picture22.JFIF" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Construccion</h5>
-      <p class="card-text"> ... </p>
-      <p class="card-text"><small class="text-muted"> ... </small></p>
-    </div>
-  </div>
-  <div class="card">
-    <img class="card-img-top" src="../img/picture3.jpg" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Chef</h5>
-      <p class="card-text">....</p>
-      <p class="card-text"><small class="text-muted">...</small></p>
-    </div>
-  </div>
-</div>
+  </section>
 
 <footer class="blockquote-footer" id="footer">
     <div class="container">

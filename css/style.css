@@ -555,13 +555,8 @@ i.fa.fa-user-circle.fa-5x {
   width: 10rem;
   display: block;
   vertical-align: middle;
-  margin-left: 60%;
-  padding-right: 1%;
+  padding-right: 1px;
 
-}
-
-.bg-info {
-    background-color: #ffffff ! important;
 }
 
 .button-center{
@@ -573,4 +568,10 @@ i.fa.fa-user-circle.fa-5x {
 .card-group{
 
   margin-bottom: 30%;
+}
+
+.card {
+  
+    padding-left: 80%;
+    border: 0px solid #f8f9fa ! important;
 }

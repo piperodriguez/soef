@@ -101,6 +101,7 @@ $result = $cn->query($data);
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../css/style.css">
   <script src="../js/bootstrap.min.js"></script>
 	<script src="../js/redireccion.js"></script>  	
   	<style type="text/css">
@@ -116,7 +117,7 @@ $result = $cn->query($data);
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">SOEF</a>
+     <img src="../img/logo.jpeg" class="float-right">
     </div>
     <ul class="nav navbar-nav">
       <li><a href="index.php">Home</a></li>
