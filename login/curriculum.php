@@ -107,18 +107,18 @@ $img = $id.'.JPG';
           </div>
           <div class="form-group">
             <label>Disponibilidad de tiempo en Horas</label>
-            <select class="form-control">
-              <option>1 hora</option>
-              <option>2 horas</option>
-              <option>3 horas</option>
-              <option>4 horas</option>
-              <option>5 horas</option>
-              <option>6 horas</option>
-              <option>7 horas</option>
-              <option>8 horas</option>
+            <select name="timeDisponible" class="form-control">
+              <option value="1">1 hora</option>
+              <option value="2">2 horas</option>
+              <option value="3">3 horas</option>
+              <option value="4">4 horas</option>
+              <option value="5">5 horas</option>
+              <option value="6">6 horas</option>
+              <option value="7">7 horas</option>
+              <option value="8">8 horas</option>
             </select>
           </div>
-
+            <button>Guardar</button>
           </form> 
       </div>
     </div>
@@ -136,9 +136,10 @@ $img = $id.'.JPG';
       $direccion = $_POST["direccion"];
       $formacion = $_POST["formacion"];
       $experiencia = $_POST["experiencia"];
+      $time = $_POST["timeDisponible"];
 
 
-      $sql = "UPDATE personas set direccion = '".$direccion."' , formacion = '".$formacion."', experiencia = '".$experiencia."' where id_persona = '".$id."'";
+      $sql = "UPDATE personas set direccion = '".$direccion."' , formacion = '".$formacion."', experiencia = '".$experiencia."', tiempo_disponible = '".$time."' where id_persona = '".$id."'";
 
       $ejecutar = $cn->query($sql);
 

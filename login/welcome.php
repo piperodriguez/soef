@@ -4,9 +4,30 @@
  
     // Check if the user is logged in, if not then redirect him to login page
     if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-    header("location: index.php");
-    exit;
-}
+      header("location: index.php");
+      exit;
+    }
+    require_once "../connect/config.php";
+    $xxx = $_SESSION["id"];
+    $sql = "SELECT id_rol FROM users WHERE id = $xxx";
+    if (!$resultado = $cn->query($sql)) {
+        // ¡Oh, no! La consulta falló. 
+        echo "Lo sentimos, este sitio web está experimentando problemas.";
+        // De nuevo, no hacer esto en un sitio público, aunque nosotros mostraremos
+        // cómo obtener información del error
+        echo "Error: La ejecución de la consulta falló debido a: \n";
+        echo "Query: " . $sql . "\n";
+        echo "Errno: " . $cn->errno . "\n";
+        echo "Error: " . $cn->error . "\n";
+        exit;
+    }else{
+
+      while($row = $resultado->fetch_assoc()) {
+          $id_rol = $row["id_rol"];
+      }
+
+    }  
+ 
 ?>
 
 <!DOCTYPE html>
@@ -17,9 +38,6 @@
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script src="../js/jquery.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -42,25 +60,30 @@
   </div>
    
   <!---->
-  <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+<nav class="navbar  navbar-light" style="background-color: #e3f2fd;">
    <div class="button-center">
       <br>
       <br>
+      <?php if ($id_rol ==1) {
+              echo '<a href="../config/servicios/index.php"><button type="button" class="btn btn-secondary btn-lg">Configuraciones</button></a>';
+            }else{
+              //echo "nada";
+            } 
+      ?>
       <a href="Welcome.php"><button type="button" class="btn btn-secondary btn-lg">Home</button></a>
       <a href="dataperson.php"><button type="button" class="btn btn-secondary btn-lg">Mi Cuenta</button></a>
       <a href="dataperson.php"><button type="button" class="btn btn-secondary btn-lg">Cambiar Contraseña</button></a>
       <a href="dataperson.php"><button type="button" class="btn btn-secondary btn-lg">Ofertas Laborales</button></a> 
       <a href="logout.php"><button type="button" class="btn btn-secondary btn-lg">Cerrar sesión</button></a>    
   </div>
-  </nav>
-
+</nav>
   <!---->
     <section class="section-padding wow fadeInUp delay-02s" id="portfolio">
     <div class="container">
       <div class="row">
         <div class="col-md-3 col-sm-12">
           <div class="section-title">
-            <h2 class="head-title">Busquedas recomendadas para ti</h2>
+            <h2 class="head-title">Busquedas recomendadas para ti <?php echo $xxx; ?></h2>
             <hr class="botm-line">
             <p class="sec-para">Algunos de los empleos que te puedan interesar</p>
           </div>
@@ -152,5 +175,7 @@
       </div>
     </div>
   </footer>
+      <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
 </body>
 </html>

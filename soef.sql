@@ -16,30 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `area`
---
-
-DROP TABLE IF EXISTS `area`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `area` (
-  `id_area` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(40) NOT NULL,
-  PRIMARY KEY (`id_area`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `area`
---
-
-LOCK TABLES `area` WRITE;
-/*!40000 ALTER TABLE `area` DISABLE KEYS */;
-INSERT INTO `area` VALUES (1,'Hogar'),(2,'Eventos'),(3,'Otros');
-/*!40000 ALTER TABLE `area` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `barrios`
 --
 
@@ -91,36 +67,6 @@ INSERT INTO `ciudad` VALUES (1,'Tunja');
 UNLOCK TABLES;
 
 --
--- Table structure for table `curriculum`
---
-
-DROP TABLE IF EXISTS `curriculum`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `curriculum` (
-  `id_curriculum` int(10) NOT NULL,
-  `nombre` varchar(50) DEFAULT NULL,
-  `apellido` varchar(50) NOT NULL,
-  `documento` int(20) NOT NULL,
-  `telefono` int(20) NOT NULL,
-  `direccion` text NOT NULL,
-  `formacion` varchar(100) NOT NULL,
-  `profesion` varchar(100) NOT NULL,
-  `experiencia` varchar(500) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `curriculum`
---
-
-LOCK TABLES `curriculum` WRITE;
-/*!40000 ALTER TABLE `curriculum` DISABLE KEYS */;
-INSERT INTO `curriculum` VALUES (0,'Juan Felipe','Rodríguez Vargas',1010229563,2147483647,'calle 116  bueno al lado de pepe sierra','no se','Ingeniero de Sistemas','desarrollo al piso'),(0,'Juan Felipe','Rodríguez Vargas',1010229563,2147483647,'calle 116  bueno al lado de pepe sierra','no se','Ingeniero de Sistemas','desarrollo al piso');
-/*!40000 ALTER TABLE `curriculum` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `personas`
 --
 
@@ -138,13 +84,17 @@ CREATE TABLE `personas` (
   `direccion` text,
   `formacion` varchar(100) DEFAULT NULL,
   `experiencia` text,
+  `tiempo_disponible` int(11) NOT NULL,
+  `id_profesion` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_persona`),
   UNIQUE KEY `Index_usuario` (`id`),
   UNIQUE KEY `Index_barrio` (`id`),
   KEY `id_barrio` (`id_barrio`),
+  KEY `profesion_persona` (`id_profesion`),
   CONSTRAINT `personas_ibfk_1` FOREIGN KEY (`id`) REFERENCES `users` (`id`),
+  CONSTRAINT `personas_ibfk_2` FOREIGN KEY (`id_profesion`) REFERENCES `profesion` (`id_profesion`),
   CONSTRAINT `relacion_persona_barrio` FOREIGN KEY (`id_barrio`) REFERENCES `barrios` (`id_barrio`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -153,7 +103,7 @@ CREATE TABLE `personas` (
 
 LOCK TABLES `personas` WRITE;
 /*!40000 ALTER TABLE `personas` DISABLE KEYS */;
-INSERT INTO `personas` VALUES (10,20,3,'Juan Felipe','Rodríguez Vargas','3005511182','vargasjuan367@gmail.com','carrera 8a #77-66','Tecnico Sistemas, Tegnolodo ADSI','Desarrollador'),(11,21,9,'Yuri Vanessa','Castiblanco Quintanilla','3026493104','yvcastiblanco5@gmail.com',NULL,'',NULL),(12,22,11,'jose ','baron','3124895595','jose.baron01@uptc.edu.co',NULL,'',NULL);
+INSERT INTO `personas` VALUES (10,20,3,'Juan Felipe','Rodríguez Vargas','3005511182','vargasjuan367@gmail.com','carrera 8a #77-66','Tecnico Sistemas, Tegnolodo ADSI','Desarrollador',0,NULL),(11,21,9,'Yuri Vanessa','Castiblanco Quintanilla','3026493104','yvcastiblanco5@gmail.com',NULL,'',NULL,0,NULL),(12,22,11,'jose ','baron','3124895595','jose.baron01@uptc.edu.co',NULL,'',NULL,0,NULL),(25,23,3,'romano','rodriguez','7470407','romano@gmail.com','carrera 8a #77-66','Jugar y ser tierno ','Guardia',4,NULL);
 /*!40000 ALTER TABLE `personas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -166,11 +116,11 @@ DROP TABLE IF EXISTS `profesion`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `profesion` (
   `id_profesion` int(11) NOT NULL AUTO_INCREMENT,
-  `id_area` int(11) NOT NULL,
+  `id_servicio` int(11) NOT NULL,
   `nombre` varchar(40) NOT NULL,
   PRIMARY KEY (`id_profesion`),
-  KEY `Index_area` (`id_area`) USING BTREE,
-  CONSTRAINT `relacion_profesion_area` FOREIGN KEY (`id_area`) REFERENCES `area` (`id_area`) ON DELETE CASCADE ON UPDATE CASCADE
+  KEY `Index_servicio` (`id_servicio`) USING BTREE,
+  CONSTRAINT `profesion_ibfk_1` FOREIGN KEY (`id_servicio`) REFERENCES `servicios` (`id_servicio`)
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -180,7 +130,6 @@ CREATE TABLE `profesion` (
 
 LOCK TABLES `profesion` WRITE;
 /*!40000 ALTER TABLE `profesion` DISABLE KEYS */;
-INSERT INTO `profesion` VALUES (5,1,'Carpintero'),(6,1,'Niñera'),(8,1,'Electricista'),(9,2,'Staff'),(10,2,'Dj'),(11,2,'Cheffs'),(12,3,'Paseador de Perros'),(13,3,'Acarreos'),(14,3,'Dpmicilios');
 /*!40000 ALTER TABLE `profesion` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -218,11 +167,8 @@ DROP TABLE IF EXISTS `servicios`;
 CREATE TABLE `servicios` (
   `id_servicio` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(40) NOT NULL,
-  `id_profesion` int(11) NOT NULL,
-  PRIMARY KEY (`id_servicio`),
-  UNIQUE KEY `Index_profesion` (`id_profesion`),
-  CONSTRAINT `relacion_profesion_servicio` FOREIGN KEY (`id_profesion`) REFERENCES `profesion` (`id_profesion`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`id_servicio`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -231,6 +177,7 @@ CREATE TABLE `servicios` (
 
 LOCK TABLES `servicios` WRITE;
 /*!40000 ALTER TABLE `servicios` DISABLE KEYS */;
+INSERT INTO `servicios` VALUES (1,'Hogar'),(2,'Eventos'),(3,'Otros');
 /*!40000 ALTER TABLE `servicios` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -250,7 +197,7 @@ CREATE TABLE `users` (
   UNIQUE KEY `username` (`username`),
   KEY `identificandonos` (`id_rol`) USING BTREE,
   CONSTRAINT `users_ibfk_1` FOREIGN KEY (`id_rol`) REFERENCES `rol` (`id_rol`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -259,7 +206,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (20,2,'frodriguez','$2y$10$2MA59aq4P.Tx6okrvFhvvOpROEvOZb0ueCn6vBdvu4llwT1ooUnAm'),(21,2,'yvcastiblanco','$2y$10$hZVvp3FSq10FXJzbkLDMaeKNmowLMQ5500dKMX1tVMWUhd0yz9042'),(22,2,'jose94','$2y$10$uW53mfFrUmoWZzg/b7ViuO/xPZraxE3/a6t4N0fLcioi.ldy63EiS');
+INSERT INTO `users` VALUES (20,1,'frodriguez','$2y$10$2MA59aq4P.Tx6okrvFhvvOpROEvOZb0ueCn6vBdvu4llwT1ooUnAm'),(21,2,'yvcastiblanco','$2y$10$hZVvp3FSq10FXJzbkLDMaeKNmowLMQ5500dKMX1tVMWUhd0yz9042'),(22,1,'jose94','$2y$10$uW53mfFrUmoWZzg/b7ViuO/xPZraxE3/a6t4N0fLcioi.ldy63EiS'),(23,2,'romano','$2y$10$9XhSoX/iFFNhUZS5Ciuy8OyEquZS1Z45ga/2v2ahyAZkMMgldHZme');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -272,4 +219,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-12-17 22:20:48
+-- Dump completed on 2018-12-25 17:15:22
