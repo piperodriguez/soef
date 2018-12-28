@@ -1,8 +1,7 @@
 $(document).ready(function(){
-	/*$(".insertAuto").click(function(){
-		alert("si llego al arachivo");
-	});*/
-	listadoServicios();
+	
+	listadoProfesiones();
+
 	$(".insertServicio").on("click", function() {
 		
 		$.ajax({
@@ -16,9 +15,12 @@ $(document).ready(function(){
 		});
 
 	});
-});
-$(document).on("click", ".crudInsertServicio", function(){
 
+});
+
+$(document).on("click", ".crudInsertProfesion", function(){
+
+	var id_servicio = $("#id_servicio").val();
 	var nombre = $("#nombre").val();
 
 
@@ -27,26 +29,28 @@ $(document).on("click", ".crudInsertServicio", function(){
 		type: "post",
 		url: "func/crudInsert.php",
 		data: {
+			id_servicio: id_servicio,
 			nombre: nombre,
 			
 		},
 		success: function() {
 			$(".formularios").empty();
-			listadoServicios();
+			listadoProfesiones();
 		}
 	});
 
 });
-$(document).on("click", ".updateServicio", function() {
 
-	var idServicio = $(this).attr("id");
+$(document).on("click", ".updateprofesion", function() {
+
+	var idProfesion = $(this).attr("id");
 
 	$.ajax({
 
 		type: "get",
 		url: "func/htmlUpdate.php",
 		data: {
-			idServicio: idServicio
+			idProfesion: idProfesion
 		},
 		success: function(result){
 			$(".formularios").empty().html(result);
@@ -54,11 +58,14 @@ $(document).on("click", ".updateServicio", function() {
 	
 
 	});
-});
-$(document).on("click", ".crudUpdatServicio", function(){
 
-	var idServicio = $(this).attr("id");
+});
+
+$(document).on("click", ".crudUpdateProfesion", function(){
+
+	var idProfesion = $(this).attr("id");
 	var nombre = $("#nombre").val();
+	var servicio = $("#servicio").val();
 
 
 	$.ajax({
@@ -66,24 +73,27 @@ $(document).on("click", ".crudUpdatServicio", function(){
 		type: "post",
 		url: "func/crudUpdate.php",
 		data: {
-			idServicio: idServicio,
+			idProfesion: idProfesion,
 			nombre: nombre,
+			servicio: servicio
 
 		},
 		success: function(){
 			$(".formularios").empty();
-			listadoServicios();
+			listadoProfesiones();
 		}
 	});
 
 });
-function listadoServicios(){
+
+function listadoProfesiones(){
 
 	$.ajax({
 		type: "get",
-		url: "func/listaServicios.php",
+		url: "func/listaProfesiones.php",
 		success: function(result){
 			$(".contenido").empty().html(result);
 		} 
 	});
 }
+
