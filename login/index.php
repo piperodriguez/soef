@@ -174,9 +174,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   <!---->
   <?php
 
-    $servicios = "SELECT servicios.nombre
+    $servicios = "SELECT servicios.nombre, servicios.id_servicio
                   FROM servicios";
+
     $queryServicios = $cn->query($servicios);
+
 
   ?>
     <section class="section-padding wow fadeInUp delay-02s" id="portfolio">
@@ -195,6 +197,23 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
           <div class="col-md-4 col-sm-6 padding-right-zero">
               <div class="portfolio-box design">
               <?php echo $fetch["nombre"]; ?>
+              <?php
+
+                $profesiones = "SELECT profesion.nombre as profesiones
+                FROM profesion 
+                WHERE id_servicio =".$fetch["id_servicio"];
+
+                $queryProfesion = $cn->query($profesiones);                
+
+                while($fetch2 = $queryProfesion->fetch_assoc()) {
+
+                  echo "<br>".$fetch2["profesiones"]."<br>";
+                }
+
+              ?>
+              </div>
+              <div class="portfolio-box design">
+              
               </div>
           </div>
           <?php } ?>
