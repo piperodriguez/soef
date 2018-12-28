@@ -172,6 +172,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   </section>
   <!---->
   <!---->
+  <?php
+
+    $servicios = "SELECT servicios.nombre
+                  FROM servicios";
+    $queryServicios = $cn->query($servicios);
+
+  ?>
     <section class="section-padding wow fadeInUp delay-02s" id="portfolio">
     <div class="container">
       <div class="row">
@@ -184,6 +191,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
           </div>
         </div>
         <div class="col-md-9 col-sm-12">
+          <?php while($fetch = $queryServicios->fetch_assoc()) { ?>
+          <div class="col-md-4 col-sm-6 padding-right-zero">
+              <div class="portfolio-box design">
+              <?php echo $fetch["nombre"]; ?>
+              </div>
+          </div>
+          <?php } ?>
+        </div>
+      <!-- <div class="col-md-9 col-sm-12">
           <div class="col-md-4 col-sm-6 padding-right-zero">
             <div class="portfolio-box design">
               <img src="../img/port01.jpg" alt="" class="img-responsive">
@@ -214,7 +230,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
               <img src="../img/port06.jpg" alt="" class="img-responsive">
             </div>
           </div>
-        </div>
+        </div>-->
       </div>
     </div>
   </section>
