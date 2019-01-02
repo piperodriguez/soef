@@ -100,9 +100,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   <link rel="stylesheet" type="text/css" href="../css/flexslider.css">
   <link rel="stylesheet" type="text/css" href="../css/style.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <script src="../js/selectProfesion.js"></script>
 </head>
 
-<body>
+<body onload="getServicios()">
   <!--header-->
   <header class="main-header" id="header">
     <!--<div class="bg-color">-->
@@ -165,7 +166,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <div class="container">
       <div class="row">
         <div class="cta-info text-center">
-          <h3><span class="dec-tec">“</span>Le da las herramientas necesarias para que encuentre los servicios que necesita<span class="dec-tec">”</span></h3>
+          <h3>
+            <h2>“Le da las herramientas necesarias para que encuentre los servicios que necesita”</h2>
+          </h3>
         </div>
       </div>
     </div>
@@ -196,7 +199,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
           <?php while($fetch = $queryServicios->fetch_assoc()) { ?>
           <div class="col-md-4 col-sm-6 padding-right-zero">
               <div class="portfolio-box design">
-              <?php echo $fetch["nombre"]; ?>
+              <h2><?php echo $fetch["nombre"]; ?></h2>
               <?php
 
                 $profesiones = "SELECT profesion.nombre as profesiones
@@ -255,6 +258,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   </section>
 
   <!---->
+    <section class="section-padding parallax bg-image-2 section wow fadeIn delay-08s" id="cta-2" style="height: 350px!important;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3" id="ServiciosList"></div>
+        <div class="col-md-3" id="ProfesionesList"></div>
+      </div>
+    </div>
+  </section>
   <!---->
 
   <section id="feature" class="section-padding">
@@ -326,29 +337,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       </div>
     </div>
   </section>
-  <!---->
-  <section class="section-padding parallax bg-image-2 section wow fadeIn delay-08s" id="cta-2">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8">
-          <div class="cta-txt">
-            <h3>Subscribe For Updates</h3>
-            <p>
 
-
-
-
-            </p>
-          </div>
-        </div>
-        <div class="col-md-4 text-center">
-          <a href="#" class="btn btn-submit">Subscribe Now</a>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!---->
-  <!---->
   <section class="section-padding wow fadeInUp delay-05s" id="contact">
     <div class="container">
       <div class="row white">
@@ -486,5 +475,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   <script src="../js/redireccion.js"></script>
   <script src="../contactform/contactform.js"></script>
   <script src="../js/jquery.flexslider.js"></script>
+  <script src="../js/selectProfesion.js"></script>
 </body>
 </html>

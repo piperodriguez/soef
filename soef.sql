@@ -1,13 +1,13 @@
--- MySQL dump 10.16  Distrib 10.1.35-MariaDB, for Win32 (AMD64)
+-- MySQL dump 10.16  Distrib 10.1.29-MariaDB, for Win32 (AMD64)
 --
 -- Host: localhost    Database: soef
 -- ------------------------------------------------------
--- Server version	10.1.35-MariaDB
+-- Server version	10.1.29-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -103,7 +103,7 @@ CREATE TABLE `personas` (
 
 LOCK TABLES `personas` WRITE;
 /*!40000 ALTER TABLE `personas` DISABLE KEYS */;
-INSERT INTO `personas` VALUES (10,20,3,'Juan Felipe','Rodríguez Vargas','3005511182','vargasjuan367@gmail.com','carrera 8a #77-66','Tecnico Sistemas, Tegnolodo ADSI','Desarrollador',0,NULL),(11,21,9,'Yuri Vanessa','Castiblanco Quintanilla','3026493104','yvcastiblanco5@gmail.com',NULL,'',NULL,0,NULL),(12,22,11,'jose ','baron','3124895595','jose.baron01@uptc.edu.co',NULL,'',NULL,0,NULL),(25,23,3,'romano','rodriguez','7470407','romano@gmail.com','carrera 8a #77-66','Jugar y ser tierno ','Guardia',4,NULL);
+INSERT INTO `personas` VALUES (10,20,3,'Juan Felipe','Rodríguez Vargas','3005511182','vargasjuan367@gmail.com','carrera 8a #77-66','Tecnico Sistemas, Tegnolodo ADSI','Desarrollador',0,4),(11,21,9,'Yuri Vanessa','Castiblanco Quintanilla','3026493104','yvcastiblanco5@gmail.com',NULL,'',NULL,0,NULL),(12,22,11,'jose ','baron','3124895595','jose.baron01@uptc.edu.co',NULL,'',NULL,0,NULL),(25,23,3,'romano','rodriguez','7470407','romano@gmail.com','carrera 8a #77-66','Jugar y ser tierno ','Guardia',4,NULL);
 /*!40000 ALTER TABLE `personas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -121,7 +121,7 @@ CREATE TABLE `profesion` (
   PRIMARY KEY (`id_profesion`),
   KEY `Index_servicio` (`id_servicio`) USING BTREE,
   CONSTRAINT `profesion_ibfk_1` FOREIGN KEY (`id_servicio`) REFERENCES `servicios` (`id_servicio`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -130,6 +130,7 @@ CREATE TABLE `profesion` (
 
 LOCK TABLES `profesion` WRITE;
 /*!40000 ALTER TABLE `profesion` DISABLE KEYS */;
+INSERT INTO `profesion` VALUES (1,1,'Carpinteria'),(2,1,'Plomero'),(3,1,'Niñera'),(4,2,'Dj'),(5,3,'Domicilios');
 /*!40000 ALTER TABLE `profesion` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -219,4 +220,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-12-25 17:15:22
+-- Dump completed on 2019-01-02 17:23:49
