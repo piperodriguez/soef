@@ -32,7 +32,6 @@
   }  
 
 
-$img = $id.'.JPG';
 
 
 ?>
@@ -44,6 +43,15 @@ $img = $id.'.JPG';
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/login.css">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
+  <style type="text/css">
+      .navbar-inverse .navbar-nav>li>a {
+          color: white;
+      }
+      .nav>li>a {   
+          padding-top: 26px;
+          font-size: 18px;
+      }
+  </style>
 </head>
 <body>
     <nav class="navbar navbar-inverse">
@@ -52,7 +60,7 @@ $img = $id.'.JPG';
      <img src="../img/logo.jpeg" class="float-right">
     </div>
     <ul class="nav navbar-nav">
-      <li><a href="index.php">Home</a></li>
+      <li><a href="index.php">Home |</a></li>
       <li><a href="dataperson.php">Datos |</a></li>
       <li><a href="curriculum.php">Curriculum |</a></li>
     </ul>
@@ -85,7 +93,31 @@ $img = $id.'.JPG';
       <div class="col-md-8">
         <h2>Llena tu curriculum</h2>
         <p>Completa la información para compartir tus servicios laborales:</p>
-        <img src="photos/<?=$img?>" alt="<?=$y;?>" class="rounded-circle" id="profile">
+
+        <?php 
+
+          $extension = array('JPG','png','jpeg');
+
+          foreach ($extension as $key => $value) {
+
+                 $img = $id.".".$value;
+
+                 $file = 'photos/'.$img;
+
+                 if (is_readable($file)) {
+                    //echo ("$file is readable");
+                    echo "<img src='$file' class='rounded-circle' id='profile'>";
+                  }else{
+                    //echo ("$file is not readable");
+                  } 
+
+                 
+
+          }
+        ?>
+
+
+
         <h4>Completando información laboral : <small><i><?=$nombre.' '.$fecha;?></i></small></h4>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>"  class="form" method="POST">
           <div class="form-group">
