@@ -3,7 +3,7 @@
 	
 	$id_servicio = $_GET['id_servicio'];
 	
-	echo 'Selecciona Profesion : <select onChange="" name="id_servicio" id="id_servicio">';
+	echo 'Selecciona profesion : <select onChange="getPersona(this.value);" class="form-control" name="cbx_municipio" id="cbx_municipio">';
 	
 	$query = "SELECT id_profesion, nombre FROM profesion WHERE id_servicio = '$id_servicio' ORDER BY nombre";
 	

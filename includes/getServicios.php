@@ -1,20 +1,17 @@
 <?php
+	require_once "../connect/config.php";
+	
+	echo 'Selecciona Un Servicio : <select onChange="getProfesion(this.value);" class="form-control" name="cbx_estado" id="cbx_estado">';
+	
+	$query = "select id_servicio, nombre from servicios order by nombre;";
 
-require_once "../connect/config.php";
-
-echo 'Selecciona Servicio : <select onChange="getServicios(this.value);" name="cbx_servicios" id="cbx_servicios">';
-
-$query = "SELECT id_servicio, nombre FROM servicios order by nombre";
-
-?>
-<option></option>
+	?>
+	<option></option>
 	<?php
 	if($resultado=$cn->query($query))
 	{
 		while($row = $resultado->fetch_assoc())
 		{
-
-			print_r($row);
 		?>
 		<option value="<?php echo $row['id_servicio']; ?>">
 		<?php echo $row['nombre']; ?>
