@@ -17,7 +17,6 @@
               WHERE personas.id = $usuario";
 
   $data = $cn->query($validar);
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -55,7 +54,7 @@
  ?>       
 
 <?php
-        if ($dato1 != null || $dato2 != null || $dato3 != null || $dato4 != null || $dato5 != null) {
+        if ($dato1 == null || $dato2 == null || $dato3 == null || $dato4 == null || $dato5 == null) {
 ?>
             <nav class="navbar navbar-inverse">
               <div class="container-fluid">
@@ -81,7 +80,7 @@
               <a href="curriculum.php"> <button class="btn btn-default">Curriculum</button></a>     
             </div>
 <?php
-        }elseif ($dato6 != null || $dato7 != null || $dato8 != null || $dato9 != null) {
+        }elseif ($dato6 == null || $dato7 == null || $dato8 == null || $dato9 == null) {
 ?>
 
              <nav class="navbar navbar-inverse">
@@ -154,7 +153,7 @@
              </div>
 <?php
          
-        }else{
+        }elseif($dato1 != null || $dato2 != null || $dato3 != null || $dato4 != null || $dato5 != null){
 ?>
           <nav class="navbar navbar-inverse">
             <div class="container-fluid">

@@ -6,13 +6,12 @@
     header("location: index.php");
     exit;
 	}
-
-	$fecha = date("Y/m/d");
   
   require_once "../connect/config.php";
   
   $x = $_SESSION["id"];
   $y = $_SESSION["username"];
+  $fecha = date("Y/m/d");
 
   $data ="SELECT users.id, personas.id_persona, personas.nombre, personas.direccion, personas.formacion, personas.experiencia
   FROM personas
@@ -30,15 +29,11 @@
 
 
   }  
-
-
-
-
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Curriculum</title>
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/login.css">
@@ -54,92 +49,84 @@
   </style>
 </head>
 <body>
-    <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-     <img src="../img/logo.jpeg" class="float-right">
-    </div>
-    <ul class="nav navbar-nav">
-      <li><a href="index.php">Home |</a></li>
-      <li><a href="dataperson.php">Datos |</a></li>
-      <li><a href="curriculum.php">Curriculum |</a></li>
-    </ul>
-  </div>
-</nav>
-  <div class="container">
-
-
-    <?php
-  if ($direccion != null || $formacion != null || $experiencia != null) {
-    ?>
-<div class="container contenedor">
-      <h1>Registro  100% de <?php echo htmlspecialchars($_SESSION["username"]); ?></h1>
-      <br>
-        <div class="progress">
-          <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
-            100% Complete 
-          </div>
+  <nav class="navbar navbar-inverse">
+     <div class="container-fluid">
+        <div class="navbar-header">
+           <img src="../img/logo.jpeg" class="float-right">
         </div>
-      <label>registro completado :</label>
-      <a href="index.php"> <button class="btn btn-default">Home</button></a>
-</div>
-    <?php
-        
-}else{
+        <ul class="nav navbar-nav">
+           <li><a href="index.php">Home |</a></li>
+           <li><a href="dataperson.php">Datos |</a></li>
+           <li><a href="curriculum.php">Curriculum |</a></li>
+        </ul>
+     </div>
+  </nav>
+  <div class="container">
+  <?php
+      if ($direccion != null || $formacion != null || $experiencia != null) {
+  ?>
+    <div class="container contenedor">
+       <h1>Registro  100% de <?php echo htmlspecialchars($_SESSION["username"]); ?></h1>
+       <br>
+       <div class="progress">
+          <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+             100% Complete 
+          </div>
+       </div>
+       <label>registro completado :</label>
+       <a href="index.php"> <button class="btn btn-default">Home</button></a>
+    </div>
 
-  
-?>  
+  <?php }else{ ?>  
     <div class="row">
-      <div class="col-md-8">
-        <h2>Llena tu curriculum</h2>
-        <p>Completa la información para compartir tus servicios laborales:</p>
-
+      <div class="col-md-8 col-md-offset-2">
+        <h2>Completa tu curriculum</h2>
+        <p>Para compartir tus servicios laborales:</p>
         <?php 
+            $extension = array('JPG','png','jpeg');
 
-          $extension = array('JPG','png','jpeg');
+            foreach ($extension as $key => $value) {
 
-          foreach ($extension as $key => $value) {
+                   $img = $id.".".$value;
+                   $file = 'photos/'.$img;
 
-                 $img = $id.".".$value;
-
-                 $file = 'photos/'.$img;
-
-                 if (is_readable($file)) {
-                    //echo ("$file is readable");
-                    echo "<img src='$file' class='rounded-circle' id='profile'>";
-                  }else{
-                    //echo ("$file is not readable");
-                  } 
-
-                 
-
-          }
+                   if (is_readable($file)) {
+                      /*
+                      * is_readable esta funcion sirve para validar qwue existe 
+                      * un archivo
+                      */
+                      echo "<img src='$file' class='rounded-circle' id='profile'>";
+                    }
+            }
         ?>
-
-
-
         <h4>Completando información laboral : <small><i><?=$nombre.' '.$fecha;?></i></small></h4>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>"  class="form" method="POST">
           <div class="form-group">
+            <?php $query = $cn->query("SELECT * FROM profesion"); ?>
+            <label for="profesion">Profesión</label>        
+            <select class="form-control" id="profesion" name="profesion">
+              <option>Selecciona tu profesión</option>
+              <?php while ($valores = mysqli_fetch_array($query)) {?>
+              <option value="<?php echo $valores["id_profesion"];?>"><?php echo $valores["nombre"]; ?></option>
+              <?php } ?>
+            </select>
+          </div>
+          <div class="form-group">
             <label for="direccion">Dirección</label>  
-            <input type="text" class="form-control" name="direccion" placeholder="Dirección">
+            <input type="text" class="form-control" name="direccion" placeholder="Ingresa tu Dirección">
           </div>
           <div class="form-group">
             <label for="formacion">Formación Académica</label>
-            <textarea class="form-control" rows="5" name="formacion"></textarea>        
+            <textarea class="form-control" rows="5" name="formacion" placeholder="Ingresa tu formación académica"></textarea>        
           </div>
-         <!-- <div class="form-group">
-            <label for="profesion">Profesión</label>        
-            <input type="text" required class="form-control" name="profesion" placeholder="Profesión">
-          </div>
-        -->
           <div class="form-group">
             <label for="experiencia">Experiencia Laboral</label>        
-            <textarea class="form-control" rows="5" name="experiencia"></textarea> 
+            <textarea class="form-control" rows="5" name="experiencia" placeholder="Ingresa tu experiencia laboral"></textarea> 
           </div>
           <div class="form-group">
             <label>Disponibilidad de tiempo en Horas</label>
             <select name="timeDisponible" class="form-control">
+              <option></option>
               <option value="1">1 hora</option>
               <option value="2">2 horas</option>
               <option value="3">3 horas</option>
@@ -150,7 +137,7 @@
               <option value="8">8 horas</option>
             </select>
           </div>
-            <button>Guardar</button>
+            <button class="btn btn-default">Guardar</button>
           </form> 
       </div>
     </div>
@@ -160,18 +147,15 @@
  
 }
  
-
-
-
  if($_SERVER["REQUEST_METHOD"] == "POST"){
 
       $direccion = $_POST["direccion"];
       $formacion = $_POST["formacion"];
       $experiencia = $_POST["experiencia"];
       $time = $_POST["timeDisponible"];
+      $profesion = $_POST["profesion"];
 
-
-      $sql = "UPDATE personas set direccion = '".$direccion."' , formacion = '".$formacion."', experiencia = '".$experiencia."', tiempo_disponible = '".$time."' where id_persona = '".$id."'";
+      $sql = "UPDATE personas set direccion = '".$direccion."' , formacion = '".$formacion."', experiencia = '".$experiencia."', tiempo_disponible = '".$time."', id_profesion = '".$profesion."' where id_persona = '".$id."'";
 
       $ejecutar = $cn->query($sql);
 
