@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+	<meta charset="utf-8">
 	<title>Listado de Profesiones</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
@@ -13,7 +14,8 @@
 	    </div>
 	    <ul class="nav navbar-nav">
 	      <li class="active"><a href="../../login/index.php">Inicio</a></li>
-	      <li><a href="../servicios/index.php1">Servicios</a></li>
+	      <li><a href="../servicios/index.php">Servicios</a></li>
+	      <li><a href="../Usuarios/listUsers.php">Lista de personas Registradas</a></li>
 	    </ul>
 	  </div>
 	</nav>

@@ -14,6 +14,7 @@
 	    <ul class="nav navbar-nav">
 	      <li class="active"><a href="../../login/index.php">Inicio</a></li>
 	      <li><a href="../profesiones/index.php">Profesiones</a></li>
+	      <li><a href="../Usuarios/listUsers.php">Lista de personas Registradas</a></li>
 	    </ul>
 	  </div>
 	</nav>
