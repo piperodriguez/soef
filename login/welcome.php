@@ -109,11 +109,9 @@
          //echo "nada";
          } 
          ?>
-      <a href="Welcome.php"><button type="button" class="btn btn-secondary btn-lg">Home</button></a>
-      <a href="dataperson.php"><button type="button" class="btn btn-secondary btn-lg">Mi Cuenta</button></a>
-      <a href="dataperson.php"><button type="button" class="btn btn-secondary btn-lg">Cambiar Contraseña</button></a>
-      <a href="dataperson.php"><button type="button" class="btn btn-secondary btn-lg">Ofertas Laborales</button></a> 
-      <a href="logout.php"><button type="button" class="btn btn-secondary btn-lg">Cerrar sesión</button></a>    
+      <a href="myprofile.php"><button type="button" class="btn btn-secondary btn-lg">Mi Cuenta</button></a>    
+      <a href="dataperson.php"><button type="button" class="btn btn-secondary btn-lg">Completar registro</button></a> 
+      <a href="#"><button type="button" class="btn btn-secondary btn-lg">Ofertas Laborales</button></a>   
    </div>
 </nav>
 <!---->

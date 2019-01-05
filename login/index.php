@@ -100,7 +100,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   <link rel="stylesheet" type="text/css" href="../css/flexslider.css">
   <link rel="stylesheet" type="text/css" href="../css/style.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-  <script src="../js/selectProfesion.js"></script>
+  <script src="../js/selectProfesion.js"></script>  
 </head>
 
 <body onload="getServicios()">
@@ -116,7 +116,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <span class="fa fa-bars"></span>
               </button>
 
-              <a href="index.html" class="navbar-brand">SOEF</a>
+              <a href="#" class="navbar-brand" onclick="getServicios()">SOEF</a>
             </div>
             <div class="collapse navbar-collapse navbar-right" id="mynavbar">
               <ul class="nav navbar-nav">
