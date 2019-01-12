@@ -124,7 +124,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <li><a href="#feature">¿Que somos?</a></li>
                 <li><a href="#portfolio">Servicios</a></li>
                 <li><a href="#contact">Contáctenos</a></li>
-                <li><a href="" data-toggle="modal" data-target="#myModal">Login</a></li>
+                <li><a href="" data-toggle="modal" data-target="#myModal">Ingresar</a></li>
               </ul>
             </div>
           </div>
@@ -436,17 +436,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 class="modal-title">Login</h4>
+              <h4 class="modal-title">Ingresar</h4>
             </div>
             <div class="modal-body">
               <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                   <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
-                      <label>Username</label>
+                      <label>Nombre de usuario</label>
                        <input type="text" name="username" class="form-control" value="<?php echo $username; ?>">
                       <span class="help-block"><?php echo $username_err; ?></span>
                   </div>    
                   <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-                      <label>Password</label>
+                      <label>Contraseña</label>
                       <input type="password" name="password" class="form-control">
                       <span class="help-block"><?php echo $password_err; ?></span>
                   </div>
