@@ -17,21 +17,23 @@
     $fecha = date("Y/m/d");
 
     $data ="SELECT
-            users.id,
-            personas.id_persona,
-            CONCAT(personas.nombre,' ',personas.apellido) as nombre,
-            personas.direccion,
-            personas.formacion,
-            personas.experiencia,
-            personas.celular,
-            personas.email,
-            barrios.nombre as barrio,
-            ciudad.nombre as ciudad
-            FROM personas
-            INNER JOIN users ON users.id = personas.id
-            INNER JOIN barrios ON barrios.id_barrio = personas.id_barrio
-            INNER JOIN ciudad ON ciudad.id_ciudad = barrios.id_ciudad
-            WHERE personas.id = $x";
+           users.id,
+           personas.id_persona,
+           CONCAT(personas.nombre,' ',personas.apellido) as nombre,
+           personas.direccion,
+           personas.formacion,
+           personas.experiencia,
+           personas.celular,
+           personas.email,
+           barrios.nombre as barrio,
+           ciudad.nombre as ciudad,
+           profesion.nombre as profesion
+           FROM personas
+           INNER JOIN users ON users.id = personas.id
+           INNER JOIN barrios ON barrios.id_barrio = personas.id_barrio
+           INNER JOIN ciudad ON ciudad.id_ciudad = barrios.id_ciudad
+           INNER JOIN profesion ON profesion.id_profesion = personas.id_profesion
+           WHERE personas.id = $x";
 
     $result = $cn->query($data);
 
@@ -46,6 +48,7 @@
           $email = $row["email"];
           $barrio = $row["barrio"];
           $ciudad = $row["ciudad"];
+          $profesion = $row["profesion"];
 
       }
 ?>
@@ -145,7 +148,7 @@
                      <a href="">Celular: <?= $celular;?></a><br/>
                      <a href="">Email: <?= $email;?> </a><br/>
                      <p>INFORMACIÓN LABORAL</p>
-                     <a href="">Profesión: </a><br/>
+                     <a href="">Profesión: <?= $profesion;?> </a><br/>
                      <a href="">Web Developer</a><br/>
                      <a href="">WordPress</a><br/>
                      <a href="">WooCommerce</a><br/>

@@ -41,6 +41,8 @@
    
    $result = $cn->query($datosUser);
    
+   $id = null;
+
    while($row = $result->fetch_assoc()) {
    
        $id = $row["id_persona"];
@@ -124,11 +126,10 @@
 
       
     <div class="col-md-9 col-sm-12">
-      <a href="Welcome.php"><button type="button" class="btn btn-secondary btn-lg">Home</button></a>
-      <a href="dataperson.php"><button type="button" class="btn btn-secondary btn-lg">Mi Cuenta</button></a>
+      <a href="myprofile.php"><button type="button" class="btn btn-secondary btn-lg">Mi Cuenta</button></a>
+      <a href="dataperson.php"><button type="button" class="btn btn-secondary btn-lg"> Completar registro</button></a>
       <a href="reset-password.php"><button type="button" class="btn btn-secondary btn-lg">Cambiar Contraseña</button></a>
-      <a href="dataperson.php"><button type="button" class="btn btn-secondary btn-lg">Ofertas Laborales</button></a> 
-      <a href="logout.php"><button type="button" class="btn btn-secondary btn-lg">Cerrar sesión</button></a>   
+      <a href="dataperson.php"><button type="button" class="btn btn-secondary btn-lg">Ofertas Laborales</button></a>   
         </div>
       </div>
     </div>
@@ -140,7 +141,7 @@
             <div class="row">
                <div class="col-md-3 col-sm-12">
                   <div class="section-title">
-                     <h2 class="head-title">Busquedas recomendadas para ti <?php echo $xxx; ?></h2>
+                     <h2 class="head-title">Busquedas recomendadas para ti</h2>
                      <hr class="botm-line">
                      <p class="sec-para">Algunos de los empleos que te puedan interesar</p>
                   </div>
