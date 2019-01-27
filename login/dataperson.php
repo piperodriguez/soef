@@ -143,11 +143,6 @@
       <div class="navbar-header">
          <img src="../img/logo.jpeg" class="float-right" style="margin-right: 30px;">
       </div>
-      <ul class="nav navbar-nav">
-         <li><a href="index.php">Home |</a></li>
-         <li><a href="dataperson.php">Datos |</a></li>
-         <li><a href="curriculum.php">Curriculum |</a></li>
-      </ul>
    </div>
 </nav>
 <div class="container contenedor">

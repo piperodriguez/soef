@@ -72,7 +72,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar-default .navbar-brand {
-  color: #226376 ! important;
+  color: #ffffff ! important;
   font-size: 34px;
   text-transform: uppercase;
   font-weight: 700;
@@ -86,7 +86,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar-default .navbar-nav>li>a { /*cambios*/
-  color: #226376;
+  color: #ffffff;
   padding: 10px 20px;
   text-transform: uppercase;
   background-color: transparent;
@@ -98,7 +98,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar-fixed-top {  /*cambios*/
-  padding: 30px 0;
+  padding: 10px 0;
   transition: all 0.5s;
 }
 
@@ -264,7 +264,7 @@ h3.txt-tl {
 }
 
 .bg-image-2 {
-  background: url('../img/images.jpg') no-repeat center fixed;
+  background: url('../img/Trabajo-en-equipo.png') no-repeat center fixed;
   -webkit-background-size: 100% auto;
   -moz-background-size: 100% auto;
   -o-background-size: 100% auto;
@@ -582,7 +582,7 @@ i.fa.fa-user-circle.fa-5x {
 }
 
 .navbar-default {
-    background: #e3f2fd ! important; /*cambios*/
+    background: #3492AB ! important; /*cambios*/
 }
 
 /*Cambios Felipe Rodríguez*/
@@ -594,7 +594,13 @@ i.fa.fa-user-circle.fa-5x {
     width: 56px;
     height: 57px;
     border-radius: 150px;
-    margin-left: 680px;
+    margin-left: 670px;
     margin-top: 10px !important;
+    
+}
+
+.navcolor {
+
+    background-color: #ffffff;
     
 }

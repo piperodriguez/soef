@@ -7,6 +7,7 @@
      header("location: index.php");
      exit;
    }
+
    require_once "../connect/config.php";
    
    $xxx = $_SESSION["id"];
@@ -48,7 +49,8 @@
        $id = $row["id_persona"];
    }     
    
-   ?>
+?>
+
 <!DOCTYPE html>
 <html lang="en">
    <head>

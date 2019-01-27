@@ -124,7 +124,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <li><a href="#feature">¿Que somos?</a></li>
                 <li><a href="#portfolio">Servicios</a></li>
                 <li><a href="#contact">Contáctenos</a></li>
-                <li><a href="" data-toggle="modal" data-target="#myModal">Ingresar</a></li>
+                <li><a href="" data-toggle="modal" data-target="#myModal">Iniciar sesión</li>
               </ul>
             </div>
           </div>
@@ -134,12 +134,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div class="flexslider">
               <ul class="slides">
                 <li>
-                  <img src="../img/image.jpg" alt="">
+                  <img src="../img/home3.jpg" alt="">
                   <section class="flex-caption">
                     <p>Soluciones</p>
                   </section>
                   <li>
-                  <img src="../img/oficina.jpg" alt="">
+                  <img src="../img/home2.png" alt="">
                   <section class="flex-caption">
                   <p>Eficientes</p>
                   </section>
@@ -436,7 +436,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 class="modal-title">Ingresar</h4>
+              <h4 class="modal-title">Iniciar sesión</h4>
             </div>
             <div class="modal-body">
               <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
@@ -451,7 +451,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                       <span class="help-block"><?php echo $password_err; ?></span>
                   </div>
                   <div class="form-group">
-                      <input type="submit" class="btn btn-primary" value="Login">
+                      <input type="submit" class="btn btn-primary" value="Iniciar sesión">
                   </div>
                   <p>¿No tienes una cuenta? <a href="registro.php">Regístrate ahora</a>.</p>
               </form>

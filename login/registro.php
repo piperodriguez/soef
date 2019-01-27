@@ -110,9 +110,6 @@
 </head>
 <body>
 
-  <!--header-->
-  <header class="main-header2" id="header">
-    <div class="bg-color">
       <!--nav-->
       <nav class="nav navbar-default navbar-fixed-top">
         <div class="container">
@@ -136,9 +133,12 @@
           </div>
         </div>
       </nav>
-      <!--/ nav-->
-    </div>
-  </header>
+      <!--/ nav-->s
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
   <!--/ header-->
 	<div class="container">
     	<div class="row">
