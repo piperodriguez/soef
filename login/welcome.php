@@ -7,7 +7,7 @@
      header("location: index.php");
      exit;
    }
-
+  $fecha = date("Y/m/d");
    require_once "../connect/config.php";
    
    $xxx = $_SESSION["id"];
@@ -118,7 +118,7 @@
         <div class="col-md-3 col-sm-12">
           <div class="section-title">
                   <?php if ($id_rol ==1) {
-              echo '<a href="../config/servicios/index.php"><button type="button" class="btn btn-secondary btn-lg">Configuraciones</button></a>';
+              echo '<a href="../config/servicios/index.php"><button type="button" class="btn btn-danger btn-lg">Configuraciones</button></a>';
             }else{
               //echo "nada";
             } 
@@ -128,10 +128,10 @@
 
       
     <div class="col-md-9 col-sm-12">
-      <a href="myprofile.php"><button type="button" class="btn btn-secondary btn-lg">Mi Cuenta</button></a>
-      <a href="dataperson.php"><button type="button" class="btn btn-secondary btn-lg"> Completar registro</button></a>
-      <a href="reset-password.php"><button type="button" class="btn btn-secondary btn-lg">Cambiar Contraseña</button></a>
-      <a href="dataperson.php"><button type="button" class="btn btn-secondary btn-lg">Ofertas Laborales</button></a>   
+      <a href="myprofile.php"><button type="button" class="btn btn-success btn-lg">Mi Cuenta</button></a>
+      <a href="dataperson.php"><button type="button" class="btn btn-default btn-lg"> Completar registro</button></a>
+      <a href="reset-password.php"><button type="button" class="btn btn-warning btn-lg">Cambiar Contraseña</button></a>
+      <a href="dataperson.php"><button type="button" class="btn btn-primary btn-lg">Ofertas Laborales</button></a>   
         </div>
       </div>
     </div>
@@ -151,83 +151,67 @@
                <div class="col-md-9 col-sm-12">
                   <div class="col-md-4 col-sm-6 padding-right-zero">
                      <div class="portfolio-box design">
-                        <img src="../img/port01.jpg" alt="" class="img-responsive">
+                        <img src="../img/espera.jpg" alt="" class="img-responsive">
                      </div>
                   </div>
-                  <div class="col-md-4 col-sm-6 padding-right-zero">
+                  <!--<div class="col-md-4 col-sm-6 padding-right-zero">
                      <div class="portfolio-box design">
                         <img src="../img/port02.jpg" alt="" class="img-responsive">
                      </div>
-                  </div>
+                  </div>-->
                   <div class="col-md-4 col-sm-6 padding-right-zero">
                      <div class="portfolio-box design">
-                        <img src="../img/port03.jpg" alt="" class="img-responsive">
+                        <img src="../img/espera.jpg" alt="" class="img-responsive">
                      </div>
                   </div>
-                  <div class="col-md-4 col-sm-6 padding-right-zero">
+                  <!--<div class="col-md-4 col-sm-6 padding-right-zero">
                      <div class="portfolio-box design">
                         <img src="../img/port04.jpg" alt="" class="img-responsive">
                      </div>
-                  </div>
+                  </div>-->
                   <div class="col-md-4 col-sm-6 padding-right-zero">
                      <div class="portfolio-box design">
-                        <img src="../img/port05.jpg" alt="" class="img-responsive">
+                        <img src="../img/espera.jpg" alt="" class="img-responsive">
                      </div>
                   </div>
-                  <div class="col-md-4 col-sm-6 padding-right-zero">
+                 <!--<div class="col-md-4 col-sm-6 padding-right-zero">
                      <div class="portfolio-box design">
                         <img src="../img/port06.jpg" alt="" class="img-responsive">
                      </div>
-                  </div>
+                  </div>-->
                </div>
             </div>
          </div>
       </section>
-      <!----->
-      <section class="section-padding parallax bg-image-2 section wow fadeIn delay-08s" id="cta-2">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-8">
-                  <div class="cta-txt">
-                     <h3>Para mas informacion contactanos</h3>
-                     <p>
-                     </p>
-                  </div>
-               </div>
-               <div class="col-md-4 text-center">
-                  <a href="#" class="btn btn-submit">info@soef.com.co</a>
-                  <a href="#" class="btn btn-submit">(57)310-649-3104</a>
-               </div>
-            </div>
-         </div>
-      </section>
-      <footer class="blockquote-footer" id="footer">
-         <div class="container">
-            <div class="row">
-               <div class="col-sm-7 footer-copyright">
-                  © Bethany Theme - All rights reserved
-                  <div class="credits">
-                     <!--
-                        All the links in the footer should remain intact.
-                        You can delete the links only if you purchased the pro version.
-                        Licensing information: https://bootstrapmade.com/license/
-                        Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Bethany
-                        -->
-                     Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-                  </div>
-               </div>
-               <div class="col-sm-5 footer-social">
-                  <div class="pull-right hidden-xs hidden-sm">
-                     <a href="#"><i class="fa fa-facebook"></i></a>
-                     <a href="#"><i class="fa fa-dribbble"></i></a>
-                     <a href="#"><i class="fa fa-twitter"></i></a>
-                     <a href="#"><i class="fa fa-google-plus"></i></a>
-                     <a href="#"><i class="fa fa-pinterest"></i></a>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </footer>
+
+    <footer class="" id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-7 footer-copyright">
+          
+          <div class="credits">
+            <!--
+              All the links in the footer should remain intact.
+              You can delete the links only if you purchased the pro version.
+              Licensing information: https://bootstrapmade.com/license/
+              Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Bethany
+            -->
+            © InnoWeb - <?= $fecha;?>
+          </div>
+        </div>
+        <div class="col-sm-5 footer-social">
+          <div class="pull-right hidden-xs hidden-sm">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-dribbble"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-google-plus"></i></a>
+            <a href="#"><i class="fa fa-pinterest"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
       <script src="../js/jquery.min.js"></script>
       <script src="../js/bootstrap.min.js"></script>
    </body>

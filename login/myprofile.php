@@ -367,7 +367,7 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-7 footer-copyright">
-          © Bethany Theme - All rights reserved
+          
           <div class="credits">
             <!--
               All the links in the footer should remain intact.
@@ -375,7 +375,7 @@
               Licensing information: https://bootstrapmade.com/license/
               Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Bethany
             -->
-            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            © InnoWeb - <?= $fecha;?>
           </div>
         </div>
         <div class="col-sm-5 footer-social">
