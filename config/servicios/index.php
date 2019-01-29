@@ -91,6 +91,7 @@
 		<div class="header">
       <button type="submit" class="services btn btn-primary">Servicios <i class="fas fa-balance-scale"></i></button>
       <button type="submit" class="profesion btn btn-primary">Profesiones <i class="fas fa-briefcase"></i></button>
+      <button type="submit" class="listBarrio btn btn-primary">Barrios <i class="fas fa-user-friends"></i></button>
       <button type="submit" class="listUser btn btn-primary">Usuarios Registrados <i class="fas fa-user-friends"></i></button>
       <button class="insertServicio btn btn-success" style="float: right !important;">Nuevo Servicio <i class="fas fa-plus-square"></i></button>
 		</div>
@@ -145,6 +146,9 @@
       window.location.href = "../Usuarios/listUsers.php";
     });
 
+    $(".listBarrio").click(function(){
+      window.location.href = "../barrios/index.php";
+    });
   });
 </script>
 </body>
