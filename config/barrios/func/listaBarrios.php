@@ -1,4 +1,4 @@
-<?php
+<!--<?php
 
 	require("../../../connect/config.php");
 
@@ -6,7 +6,6 @@
 			FROM barrios";
 
 	$query = $cn->query($sql);
-
 
 ?>
 <table class="table">
@@ -16,16 +15,16 @@
 		</tr>	
 	</thead>
 	<?php while($fetch = $query->fetch_assoc()) { ?>
-	<tbody>
+	<tbody id="myTable">
 		<tr>
 			<td><?=$fetch["nombre"];?></td>
 			<td>
-				<button class="updateprofesion btn btn-default" id="<?php echo $fetch["id_barrio"]; ?>">
+				<button class="updateBarrio btn btn-default" id="<?php echo $fetch["id_barrio"]; ?>">
 					Editar Barrio
 				</button>
-				<button class="crudDeleteProfesion btn btn-default" id="<?php echo $fetch["id_barrio"];?>">Borrar Barrio</button>
 			</td>
 		</tr>
 	</tbody>
 	<?php } ?>
 </table>
+-->

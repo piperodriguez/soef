@@ -6,6 +6,6 @@
 				<input type="text" id="nombre" name="nombre" class="form-control">
 			</div>
 			<br>
-			<button class="crudInsertServicio btn btn-danger"><i class="fas fa-plus-square"></i></button>
+			<button class="crudInsertBarrio btn btn-danger"><i class="fas fa-plus-square"></i>Registrar Barrio</button>
 		</form>
 	</div>
