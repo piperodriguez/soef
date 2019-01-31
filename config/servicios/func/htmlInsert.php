@@ -1,5 +1,5 @@
 	
-	<div class="col-md-offset-7 well">
+	<div class="col-md-offset-7 well" style="background-color: lightgray;">
 		<span><b>Nuevo Servicio</b></span>
 		<form>
 			<div class="form-group">

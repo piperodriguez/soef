@@ -8,14 +8,12 @@
 	$fetch = $query->fetch_assoc();
 
 ?>
-<table border="1" cellpadding="5" cellspacing="0">
-	<tr>
-		<td>nombre: </td>
-		<td><input type="text" id="nombre" value="<?php echo $fetch["nombre"]; ?>">
-		</td>
-	</tr>
-	<tr>
-		<td colspan="2"><button class="crudUpdatServicio" id="<?php echo $idServicio;?>">Actualizar Servicio</button>
-		</td>	
-	</tr>
-</table>
+<div class="col-md-offset-7 well" style="background-color: lightgray;">
+	<div class="form-group">
+		<label for="nombre">Nombre:</label>		
+		<input type="text" id="nombre" value="<?php echo $fetch["nombre"]; ?>">		
+	</div>
+
+		<button class="crudUpdatServicio btn btn-danger" id="<?php echo $idServicio;?>">Actualizar Servicio</button>
+</div>
+		

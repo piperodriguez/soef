@@ -40,10 +40,20 @@
     {
       display: inline-block;
     }
+    #servicios{
+      margin-top: 10%;
+    }
+
+#footer2 {
+    background-color: #191919;
+    padding: 20px 0px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
   </style>
   <script src="../../js/jquery.min.js"></script>
-  <script src="../../js/bootstrap.min.js"></script>
-  
+  <script src="../../js/bootstrap.min.js"></script>  
 </head>
 <body>
 	      <nav class="nav navbar-default navbar-fixed-top">
@@ -53,7 +63,7 @@
                   <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mynavbar" aria-expanded="false" aria-controls="navbar">
                   <span class="fa fa-bars"></span>
                   </button>
-                  <a href="../..//login/welcome.php" class="navbar-brand">SOEF</a>
+                  <a href="../../login/welcome.php" class="navbar-brand">SOEF</a>
                </div>
 
                   <?php
@@ -86,24 +96,23 @@
             </div>
          </div>
       </nav>
-      <br><br><br><br><br><br>
-	<div class="container">
-		<div class="header">
+	<div class="container" id="servicios">
+		<div class="header well">
       <button type="submit" class="services btn btn-primary">Servicios <i class="fas fa-balance-scale"></i></button>
       <button type="submit" class="profesion btn btn-primary">Profesiones <i class="fas fa-briefcase"></i></button>
       <button type="submit" class="listBarrio btn btn-primary">Barrios <i class="fas fa-user-friends"></i></button>
       <button type="submit" class="listUser btn btn-primary">Usuarios Registrados <i class="fas fa-user-friends"></i></button>
       <button class="insertServicio btn btn-success" style="float: right !important;">Nuevo Servicio <i class="fas fa-plus-square"></i></button>
 		</div>
-		<div class="wrapper">
-      <h2>Listado de Servicios</h3>
-        <i class="fas fa-balance-scale fa-5x col-md-offset-1"></i>
-        <br><br>
-			<div class="contenido"></div>
-			<div class="formularios"></div>
-		</div>
 	</div>
-    <footer class="" id="footer">
+  <div class="container">
+      <div class="contenido">
+        <h2>Listado de Servicios</h3>
+        <i class="fas fa-balance-scale fa-5x col-md-offset-1"></i>
+      </div>
+      <div class="formularios"></div>
+  </div>
+    <footer id="footer2">
     <div class="container">
       <div class="row">
         <div class="col-sm-7 footer-copyright">
