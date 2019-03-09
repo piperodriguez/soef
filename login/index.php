@@ -100,10 +100,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   <link rel="stylesheet" type="text/css" href="../css/flexslider.css">
   <link rel="stylesheet" type="text/css" href="../css/style.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-  <script src="../js/selectProfesion.js"></script>  
 </head>
 
-<body onload="getServicios()">
+<body>
   <!--header-->
   <header class="main-header" id="header">
     <!--<div class="bg-color">-->
@@ -124,7 +123,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <li><a href="#feature">¿Que somos?</a></li>
                 <li><a href="#portfolio">Servicios</a></li>
                 <li><a href="#contact">Contáctenos</a></li>
-                <li><a href="" data-toggle="modal" data-target="#myModal">Iniciar sesión</li>
+                <li><a href="" data-toggle="modal" data-target="#myModal">Iniciar sesión</a></li>
               </ul>
             </div>
           </div>
@@ -159,6 +158,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
           <h4 class="sub-title">¡ a tu alcance !</h4>
         </div>
         </div>-->
+
   </header>
   <!--/ header-->
   <!---->
@@ -168,6 +168,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <div class="cta-info text-center">
           <h3>
             <h2>“Le da las herramientas necesarias para que encuentre los servicios que necesita”</h2>
+            <a href="../servicios/index.php"><button class="btn btnBlueIce">Solicitar Servicio</button></a>
           </h3>
         </div>
       </div>
@@ -257,17 +258,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     </div>
   </section>
 
-  <!---->
-    <section class="section-padding parallax bg-image-2 section wow fadeIn delay-08s" id="cta-2" style="height: 350px!important;">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4" id="serviciosList"></div> 
-        <div class="col-md-4" id="profesionesList"></div> 
-        <div class="col-md-4" id="personasList"></div>
-      </div>
-    </div>
-  </section>
-  <!---->
 
   <section id="feature" class="section-padding">
     <div class="container">
@@ -476,6 +466,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   <script src="../js/redireccion.js"></script>
   <script src="../contactform/contactform.js"></script>
   <script src="../js/jquery.flexslider.js"></script>
-  <script src="../js/selectProfesion.js"></script>
 </body>
 </html>
