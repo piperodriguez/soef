@@ -168,13 +168,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <div class="cta-info text-center">
           <h3>
             <h2>“Le da las herramientas necesarias para que encuentre los servicios que necesita”</h2>
-            <a href="../servicios/index.php"><button class="btn btnBlueIce">Solicitar Servicio</button></a>
+            <a href="../servicios/getPersona.php"><button class="btn btnBlueIce">Solicitar Servicio</button></a>
           </h3>
         </div>
       </div>
     </div>
   </section>
   <!---->
+  <section class="section-padding parallax bg-image-2 section wow fadeIn delay-08s" id="cta-2" style="height: 350px!important;">
+
+  </section>
   <!---->
   <?php
 

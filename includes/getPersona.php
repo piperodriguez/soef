@@ -4,6 +4,8 @@
 	$id_profesion = $_GET['id_profesion'];
 	
 	echo 'Selecciona Una Persona: <select class="form-control" name="cbx_localidad" id="cbx_localidad">';
+	echo "<option></option>";
+	
 	
 	$query = "SELECT id_persona, nombre
 			  FROM personas 
@@ -13,8 +15,17 @@
 	{
 		while($row = $resultado->fetch_assoc())
 		{
+			if (!isset($row['id_persona'])) {
+				echo "opcion 1";
+
+				?>
+					<option value="<?php echo $row['id_persona']; ?>"><?php echo $row['nombre']; ?></option>
+				<?php
+			}else{
+				echo "<option>No se encuentran resultados</option>";
+			}
 		?>
-		<option value="<?php echo $row['id_persona']; ?>"><?php echo $row['nombre']; ?></option>
+			
 		
 		<?php
 		}
