@@ -91,8 +91,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SOEF</title>
-  <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
-  <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
+  <meta name="description" content="Soef EMPLEOS">
+  <meta name="keywords" content="Empleo, Tunja, Servicios">
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700,300|Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
@@ -168,7 +168,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <div class="cta-info text-center">
           <h3>
             <h2>“Le da las herramientas necesarias para que encuentre los servicios que necesita”</h2>
-            <a href="../servicios/getPersona.php"><button class="btn btnBlueIce">Solicitar Servicio</button></a>
+            <a href="../servicios/getListPersonas.php"><button class="btn btnBlueIce">Solicitar Servicio</button></a>
           </h3>
         </div>
       </div>

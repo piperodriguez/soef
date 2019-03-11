@@ -15,6 +15,8 @@ function getServicios() {
 	xmlhttp3.open("GET","../includes/getServicios.php",true);
 	xmlhttp3.send();
 }
+
+
  
 function getProfesion(id_servicio) {
 	
@@ -32,6 +34,8 @@ function getProfesion(id_servicio) {
 	xmlhttp3.open("GET","../includes/getProfesion.php?id_servicio="+id_servicio,true);
 	xmlhttp3.send();
 }
+
+
  
 function getPersona(id_profesion) {
 	

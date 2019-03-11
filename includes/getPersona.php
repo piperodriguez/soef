@@ -14,17 +14,10 @@
 	if($resultado=$cn->query($query))
 	{
 		while($row = $resultado->fetch_assoc())
-		{
-			if (!isset($row['id_persona'])) {
-				echo "opcion 1";
+		{ ?>
 
-				?>
 					<option value="<?php echo $row['id_persona']; ?>"><?php echo $row['nombre']; ?></option>
-				<?php
-			}else{
-				echo "<option>No se encuentran resultados</option>";
-			}
-		?>
+
 			
 		
 		<?php
