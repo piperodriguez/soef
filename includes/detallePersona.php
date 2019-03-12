@@ -57,30 +57,33 @@
 		      }
 
          ?>
+
+      <link rel="stylesheet" type="text/css" href="../css/myprofile.css">
       <div class="container emp-profile">
          <form method="post">
             <div class="row">
                <div class="col-md-4">
                   <div class="profile-img">
                      <?php 
-                        $/*extension = array('JPG','png','jpeg');
+                        $extension = array('JPG','png','jpeg');
                         
                         foreach ($extension as $key => $value) {
+
                         
-                        
-                               $img = $id.".".$value;
-                               $file = 'photos/'.$img;
+                               $img = $id_persona.".".$value;
+                               $file = '../login/photos/'.$img;
+
+                               
                         
                                if (is_readable($file)) {
                                   /*
                                   * is_readable esta funcion sirve para validar qwue existe 
                                   * un archivo
                                   */
-                                  /*echo "<img src='$file'  style=''height:200px;>";
+                                  echo "<img src='$file'  style=''height:200px;>";
                                 }
-                        }*/
+                        }
                               $id_persona =$_GET["id_persona"];
-      echo "hola persona numero".$id_persona;
                         ?>
                      <div class="file btn btn-lg btn-primary">
                         Change Photo
@@ -106,9 +109,6 @@
                         </li>
                      </ul>
                   </div>
-               </div>
-               <div class="col-md-2">
-                  <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Editar Perfil"/>
                </div>
             </div>
             <div class="row">
@@ -230,3 +230,11 @@
       </script>
    </body>
 </html>
+<script src="../js/bootstrap.min.js"></script>
+
+
+<style type="text/css">
+   .file.btn.btn-lg.btn-primary {
+    display: none !important;
+   }
+</style>

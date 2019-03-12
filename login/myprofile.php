@@ -53,6 +53,8 @@
 
     $x = $_SESSION["id"];
 
+    
+
     $fecha = date("Y/m/d");
 
     $data ="SELECT
