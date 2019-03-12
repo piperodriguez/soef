@@ -24,31 +24,16 @@
 			</thead>
 			<tbody>
 			<?php while($row = $resultado->fetch_assoc()){ ?>
-			<tr class="data">
+			<tr>
 				<td><?php echo $row['nombre']; ?></td>
-				<td id="persona">
-					<input type="hidden" id="id_<?=$row['id_persona'];?>" value="<?php echo $row['id_persona']; ?>">
-					<button class="btn"><i class="fa fa-briefcase"></i></button>
+				<td id="persona">					
+					<a href="../includes/detallePersona.php?id_persona=<?=$row['id_persona'];?>">
+					 <button class="btn"><i class="fa fa-briefcase"></i></button>
+					</a>
 				</td>
 			</tr>
 			<?php }?>
 			</tbody>
 		</table>
-		<script type="text/javascript">
 
-
-			$(".btn").click(function(){
-					
-				$(".data").each(function(){
-					/*var persona = $("td #persona").val();
-					alert(persona);*/
-					alert($(this).text());
-
-				});
-
-
-			});
-
-
-		</script>
 	</div>
