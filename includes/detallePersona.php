@@ -4,9 +4,38 @@
       <meta charset="utf-8">
       <title>Solicitar Servicio</title>
       <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="../css/style.css">
+      <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
       <script src="../js/jquery.min.js"></script>
    </head>
    <body>
+       <nav class="nav navbar-default navbar-fixed-top">
+        <div class="container">
+          <div class="col-md-12">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mynavbar" aria-expanded="false" aria-controls="navbar">
+                <span class="fa fa-bars"></span>
+              </button>
+
+              <a href="../index.php" class="navbar-brand">SOEF</a>
+            </div>
+            <div class="collapse navbar-collapse navbar-right" id="mynavbar">
+              <ul class="nav navbar-nav">
+                <li><a href="http://localhost/soef/login/index.php">HOME</a></li>
+                <li><a href="http://localhost/soef/login/registro.php">Registrate</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!--/ nav-->
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
       <?php
          if (!isset($_GET["id_persona"])) {
          
@@ -53,6 +82,7 @@
 		          $barrio = $row["barrio"];
 		          $ciudad = $row["ciudad"];
 		          $profesion = $row["profesion"];
+                $time = $row["tiempo_disponible"];
 
 		      }
 
@@ -73,8 +103,6 @@
                                $img = $id_persona.".".$value;
                                $file = '../login/photos/'.$img;
 
-                               
-                        
                                if (is_readable($file)) {
                                   /*
                                   * is_readable esta funcion sirve para validar qwue existe 
@@ -171,6 +199,7 @@
                            </div>
                         </div>
                      </div>
+                     <!--Tiempo disponible-->
                      <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                         <div class="row">
                            <div class="col-md-6">

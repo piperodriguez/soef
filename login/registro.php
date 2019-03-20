@@ -123,17 +123,13 @@
             </div>
             <div class="collapse navbar-collapse navbar-right" id="mynavbar">
               <ul class="nav navbar-nav">
-                <li><a href="#header">HOME</a></li>
-                <li><a href="#feature">¿Que somos?</a></li>
-                <li><a href="#portfolio">Servicios</a></li>
-                <li><a href="#contact">Contáctenos</a></li>
-                <li><a href="" data-toggle="modal" data-target="#myModal">Login</a></li>
+                <li><a href="./index.php">HOME</a></li>
               </ul>
             </div>
           </div>
         </div>
       </nav>
-      <!--/ nav-->s
+      <!--/ nav-->
   <br>
   <br>
   <br>

@@ -100,6 +100,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   <link rel="stylesheet" type="text/css" href="../css/flexslider.css">
   <link rel="stylesheet" type="text/css" href="../css/style.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+  <!-- Hello home page! A long scrolling slider with various sections -->
+      <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
+      <script type="text/javascript">
+         window.cookieconsent_options = {"message":"Este sitio web utiliza cookies para garantizar que obtenga la mejor experiencia en nuestro sitio web.","dismiss":"De acuerdo!","learnMore":"Más Información","link":"./legal.html","theme":"dark-bottom"};
+      </script>
+      <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.10/cookieconsent.min.js"></script>
+      <!-- End Cookie Consent plugin -->
 </head>
 
 <body>
@@ -168,7 +176,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <div class="cta-info text-center">
           <h3>
             <h2>“Le da las herramientas necesarias para que encuentre los servicios que necesita”</h2>
-            <a href="../servicios/getListPersonas.php"><button class="btn btnBlueIce">Solicitar Servicio</button></a>
+            <a href="../servicios/getListPersonas.php"><button type="button" class="btn btn-dark">Solicitar Servicio</button></a>
           </h3>
         </div>
       </div>
